@@ -1,0 +1,10 @@
+TODO
+
+- snap line to points when drawing
+- force first point to be on the grid
+- light up effect when the line covers the point
+- light up on hover (on desktop)
+
+- detect the win condition
+  - make the points fade out and arrow remains
+  - rotate arrow 

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Responsive PixiJS Canvas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #333;
+            overflow: hidden;
+        }
+        #pixi-container {
+            position: relative;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+</head>
+<body>
+    <div id="pixi-container"></div>
+    <script>
+        // Initial canvas size
+        const DEFAULT_WIDTH = 800;
+        const DEFAULT_HEIGHT = 600;
+        
+        // Create PixiJS application
+        const app = new PIXI.Application({
+            backgroundColor: 0x1099bb,
+            resolution: window.devicePixelRatio || 1,
+            autoDensity: true,
+            width: DEFAULT_WIDTH,
+            height: DEFAULT_HEIGHT,
+        });
+
+        // Add the canvas to our container
+        document.getElementById('pixi-container').appendChild(app.view);
+
+        // Add some sample content
+        const circle = new PIXI.Graphics();
+        circle.beginFill(0xff0000);
+        circle.drawCircle(0, 0, 50);
+        circle.endFill();
+        circle.x = DEFAULT_WIDTH / 2;
+        circle.y = DEFAULT_HEIGHT / 2;
+        app.stage.addChild(circle);
+
+        // Resize function
+        function resize() {
+            // Get the parent container size
+            const parent = app.view.parentElement;
+            const containerWidth = parent.clientWidth;
+            const containerHeight = parent.clientHeight;
+
+            // Calculate the scaling ratio to maintain aspect ratio
+            const scale = Math.min(
+                window.innerWidth / DEFAULT_WIDTH,
+                window.innerHeight / DEFAULT_HEIGHT
+            );
+
+            // Calculate new dimensions
+            const newWidth = Math.round(DEFAULT_WIDTH * scale);
+            const newHeight = Math.round(DEFAULT_HEIGHT * scale);
+
+            // Resize the renderer
+            app.renderer.resize(newWidth, newHeight);
+
+            // Scale the stage to maintain content size relative to canvas
+            app.stage.scale.x = scale;
+            app.stage.scale.y = scale;
+
+            // Center the stage
+            app.stage.position.x = newWidth / 2 - (DEFAULT_WIDTH / 2 * scale);
+            app.stage.position.y = newHeight / 2 - (DEFAULT_HEIGHT / 2 * scale);
+        }
+
+        // Listen for window resize events
+        window.addEventListener('resize', resize);
+
+        // Initial resize call
+        resize();
+
+        // Animation loop
+        app.ticker.add(() => {
+            // Rotate the circle
+            circle.rotation += 0.01;
+        });
+    </script>
+</body>
+</html>

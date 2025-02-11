@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: min(600px, 100vw);
+            background-color: #3498db;
+        }
+
+        .aspect-ratio-box {
+            position: relative;
+            padding-top: 66.67%; /* 400/600 = 0.6667 = 66.67% for 3:2 aspect ratio */
+        }
+
+        .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="aspect-ratio-box">
+            <div class="content">
+                600x400 Responsive Div
+            </div>
+        </div>
+    </div>
+</body>
+</html>
