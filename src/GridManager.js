@@ -2,6 +2,7 @@ import * as PIXI from 'pixi.js';
 import { gsap } from "gsap";
 import { PixiPlugin } from "gsap/PixiPlugin";
 import { lineIntersectCircle } from './LineCircleIntersection.js'
+import { snapToAngle } from './snapToAngle.js'
 window.PIXI = PIXI
 
 gsap.registerPlugin(PixiPlugin);
@@ -12,6 +13,7 @@ const COLORS = {
     red: 0x990012,
     pink: 0xFFB7C5
 }
+const GRID_OPTIONS = { spacing: 100, size: 3 }
 
 export class GridManager {
     constructor(app_) {
@@ -22,51 +24,80 @@ export class GridManager {
         this.setupGrid()   
         const lineDrawing = new LineDrawing()
         this.lineDrawing = lineDrawing
-        app.stage.hitArea = app.screen;
 
+        const marker = new PIXI.Graphics();
+        marker.circle(0, 0, 5)
+        marker.fill(0x00ff00)
+        // app.stage.addChild(marker)
+        
+
+        // On mouse click OR touch
+        app.stage.hitArea = app.screen;
+        app.stage.eventMode = 'static'
         app.stage.on('pointerdown', (e) => {      
-            // let position = this.getPointerPosition(e)
+            // Take the current line end point, not touch position,
+            // to account for snapping 
             let position = lineDrawing.pointerPosition
             if (e.target.isCircle) {
-                position = e.target.toGlobal(new PIXI.Point())
+                // if you tap on/near a circle, snap to it but 
+                // without changing direction of the line
+                const circlePosition = e.target.toGlobal(new PIXI.Point())
+                const currentLineAngle = lineDrawing.getAngle()
+                if (currentLineAngle == null) {
+                    position = circlePosition
+                } else {
+                    position = snapToAngle(position, circlePosition, currentLineAngle)
+                }
             }
             // if it's NOT a circle and this is the first point REJECT
             if (lineDrawing.points.length == 0 && !e.target.isCircle) {
                 return
             }
 
-            // TODO: instead of pointer position, use the snapped position
+            // Check if point is close enough to somewhere on the grid to snap
+            const closestGridPoint = computeClosestGridPoint(position)
+            const dist = distance(closestGridPoint, position)
+            if (dist <= 40) {
+                position = closestGridPoint
+            }
+            marker.x = closestGridPoint.x
+            marker.y = closestGridPoint.y
 
             if (e.data.pointerType != 'mouse') {
+                // for mouse, add points on every click
+                // but for touch, only add on the first tap
+                // after that, you add on release
                 if (lineDrawing.points == 0) {
                     lineDrawing.pushPoint(position.x, position.y)
                     this.updateCompletedPoints()
-                } else {
-
                 }
             } else {
                 lineDrawing.pushPoint(position.x, position.y)
                 this.updateCompletedPoints()
             }
         })
-        app.stage.eventMode = 'static'
         app.stage.on('pointerup', (e) => {
             if (e.data.pointerType != 'mouse') {
-                // push last position
-                const position = lineDrawing.pointerPosition
+                // if it's NOT a circle and this is the first point REJECT
+                if (lineDrawing.points.length == 0 && !e.target.isCircle) {
+                    return
+                }
+                
+                let position = lineDrawing.pointerPosition
+
+                // Check if point is close enough to somewhere on the grid to snap
+                const closestGridPoint = computeClosestGridPoint(position)
+                const dist = distance(closestGridPoint, position)
+                if (dist <= 40) {
+                    position = closestGridPoint
+                }
+
                 lineDrawing.pushPoint(position.x, position.y)
                 this.updateCompletedPoints()
             }
         })
 
-        function distance(p1, p2) {
-            const xdiff = p1.x - p2.x 
-            const ydiff = p1.y - p2.y 
-            return Math.sqrt(Math.pow(xdiff, 2) + Math.pow(ydiff, 2))
-        }
 
-
-        
         app.stage.on('pointermove', (e) => {      
             
 
@@ -79,6 +110,7 @@ export class GridManager {
                 p1 = linePoints[linePoints.length - 2]
                 p2 = linePoints[linePoints.length - 1]
 
+
                 for (let circleNode of this.points) {
                     const bool = circleNode.intersectsLine(p1, p2)
                     circleNode.setHighlighted(bool)
@@ -87,15 +119,17 @@ export class GridManager {
                         // ignore point if it's the starting point 
                         const dist = distance(p1, circlePosition)
                         if (dist > 20) {
-                            intersectedPoints.push(circlePosition)
+                            intersectedPoints.push({circlePosition, dist})
                         } 
                     }
                 }
             }
 
+            intersectedPoints.sort((a, b) => a.dist - b.dist)
+
             lineDrawing.pointerPosition = this.getPointerPosition(e)
             if (intersectedPoints.length > 0) {
-                const lastPoint = intersectedPoints.pop()
+                const lastPoint = (intersectedPoints.pop()).circlePosition
 
                 const p0 = lineDrawing.points[lineDrawing.points.length - 1]
                 const pTarget = lineDrawing.pointerPosition
@@ -167,8 +201,8 @@ export class GridManager {
         const { app } = this
         const gridContainer = new PIXI.Container();
         app.stage.addChild(gridContainer);
-        const spacing = 100
-        const GRID_SIZE = 3
+        const spacing = GRID_OPTIONS.spacing
+        const GRID_SIZE = GRID_OPTIONS.size
         const totalWidth = spacing * (GRID_SIZE - 1);
         const totalHeight = spacing * (GRID_SIZE - 1);
 
@@ -181,6 +215,7 @@ export class GridManager {
                 this.points.push(node)
             }
         }
+
 
         gridContainer.x = app.renderer.width / 2;
         gridContainer.y = app.renderer.height / 2;
@@ -206,6 +241,16 @@ class LineDrawing {
         this.width = LineDrawing.width
     }
 
+    getAngle() {
+        if (this.points.length == 0) return null 
+
+        const lastPoint = this.points[this.points.length - 1]
+        const dy = this.pointerPosition.y - lastPoint.y
+        const dx = this.pointerPosition.x - lastPoint.x
+
+        return Math.atan2(dy, dx)
+    }
+
     pushPoint(x, y) {
         if (this.points.length == 4) {
             // TODO check win condition
@@ -214,7 +259,8 @@ class LineDrawing {
             return
         }
 
-        this.points.push({ x, y })        
+        this.points.push({ x, y })    
+        this.pointerPosition = null    
     }
     
     fadeOutLine() {
@@ -302,4 +348,20 @@ class PointNode {
         }
         
     }
+}
+
+function distance(p1, p2) {
+    const xdiff = p1.x - p2.x 
+    const ydiff = p1.y - p2.y 
+    return Math.sqrt(Math.pow(xdiff, 2) + Math.pow(ydiff, 2))
+}
+function computeClosestGridPoint(point) {
+    const screenCenterX = app.renderer.width / 2;
+    const screenCenterY = app.renderer.height / 2;
+    const spacing = GRID_OPTIONS.spacing
+    
+    const x = Math.round((point.x - screenCenterX) / spacing) * spacing + screenCenterX
+    const y = Math.round((point.y - screenCenterY) / spacing) * spacing + screenCenterY
+
+    return { x, y }
 }

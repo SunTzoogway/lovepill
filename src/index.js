@@ -21,6 +21,8 @@ async function init() {
     containerElement.appendChild(app.canvas);
     app.canvas.style.height = 'auto'
 
+    
+
     const gridManager = new GridManager(app)
     function update() {
       gridManager.update()

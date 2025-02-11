@@ -1,10 +1,13 @@
 TODO
 
-- snap line to points when drawing
-- force first point to be on the grid
-- light up effect when the line covers the point
-- light up on hover (on desktop)
+- When you cover ALL points, consider that WIN
+  - make points fade out, line remains
+  - then fade out line and redirect to the static page of Love Pill & Manifesto
+- If failed, make points reset 
+  (fade back to the right color)
 
-- detect the win condition
-  - make the points fade out and arrow remains
-  - rotate arrow 
+- Glow on mouse over / when line is close 
+
+
+- Make the canvas span the whole screen but keep the app centered 
+  (so that line drawing doesn't stop around the edges of the screen)
