@@ -21,7 +21,8 @@ async function init() {
     containerElement.appendChild(app.canvas);
     app.canvas.style.height = 'auto'
 
-    
+    // Make canvas full size after all
+    // app.renderer.resize(window.innerWidth, window.innerHeight);
 
     const gridManager = new GridManager(app)
     function update() {
@@ -31,6 +32,11 @@ async function init() {
     }
     update()
 
+    // Add resize listener
+    // window.addEventListener('resize', () => {
+    //   app.renderer.resize(window.innerWidth, window.innerHeight);
+    //   gridManager.resize()
+    // });
 }
 
 init()
