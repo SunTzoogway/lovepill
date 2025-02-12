@@ -17,13 +17,7 @@ async function init() {
       autoDensity: true,
       resolution: window.devicePixelRatio || 1,
     });
-    app.renderer.resize(500, 500);
     containerElement.appendChild(app.canvas);
-    app.canvas.style.height = 'auto'
-
-    
-    // Make canvas full size after all
-    // app.renderer.resize(window.innerWidth, window.innerHeight);
 
     const gridManager = new GridManager(app)
     function update() {
@@ -34,10 +28,21 @@ async function init() {
     update()
 
     // Add resize listener
-    // window.addEventListener('resize', () => {
-    //   app.renderer.resize(window.innerWidth, window.innerHeight);
-    //   gridManager.resize()
-    // });
+    window.addEventListener('resize', handleResize);
+    handleResize()
+    function handleResize() {
+        if (window.innerWidth < 500) {
+            // Small screen: fixed width with auto height
+            app.renderer.resize(500, 500);
+            app.canvas.style.height = 'auto';
+        } else {
+            // Large screen: full width and height
+            app.renderer.resize(window.innerWidth, window.innerHeight);
+            app.canvas.style.height = '100%';
+        }
+  
+        if(gridManager) gridManager.resize();
+    }
 }
 
 init()
