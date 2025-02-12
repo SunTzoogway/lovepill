@@ -14,6 +14,7 @@ const COLORS = {
     pink: 0xFFB7C5
 }
 const GRID_OPTIONS = { spacing: 100, size: 3 }
+const SNAP_RADIUS = 35
 
 export class GridManager {
     constructor(app_) {
@@ -38,6 +39,9 @@ export class GridManager {
             // Take the current line end point, not touch position,
             // to account for snapping 
             let position = lineDrawing.pointerPosition
+            if (lineDrawing.pointerPosition == null) {
+                position = { x: e.global.x, y: e.global.y }
+            }
             if (e.target.isCircle) {
                 // if you tap on/near a circle, snap to it but 
                 // without changing direction of the line
@@ -57,7 +61,7 @@ export class GridManager {
             // Check if point is close enough to somewhere on the grid to snap
             const closestGridPoint = computeClosestGridPoint(position)
             const dist = distance(closestGridPoint, position)
-            if (dist <= 35) {
+            if (dist <= SNAP_RADIUS) {
                 position = closestGridPoint
             }
             marker.x = closestGridPoint.x
@@ -88,7 +92,7 @@ export class GridManager {
                 // Check if point is close enough to somewhere on the grid to snap
                 const closestGridPoint = computeClosestGridPoint(position)
                 const dist = distance(closestGridPoint, position)
-                if (dist <= 40) {
+                if (dist <= SNAP_RADIUS) {
                     position = closestGridPoint
                 }
 

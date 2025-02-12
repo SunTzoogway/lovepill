@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vite build && scp -r dist/* root@omarshehata.me:/var/www/html/lovepill/"
   },
   "devDependencies": {
     "vite": "^2.7.2"

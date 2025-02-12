@@ -21,6 +21,7 @@ async function init() {
     containerElement.appendChild(app.canvas);
     app.canvas.style.height = 'auto'
 
+    
     // Make canvas full size after all
     // app.renderer.resize(window.innerWidth, window.innerHeight);
 
