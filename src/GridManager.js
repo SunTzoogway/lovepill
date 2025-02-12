@@ -57,7 +57,7 @@ export class GridManager {
             // Check if point is close enough to somewhere on the grid to snap
             const closestGridPoint = computeClosestGridPoint(position)
             const dist = distance(closestGridPoint, position)
-            if (dist <= 40) {
+            if (dist <= 35) {
                 position = closestGridPoint
             }
             marker.x = closestGridPoint.x
@@ -128,40 +128,7 @@ export class GridManager {
             intersectedPoints.sort((a, b) => a.dist - b.dist)
 
             lineDrawing.pointerPosition = this.getPointerPosition(e)
-            if (intersectedPoints.length > 0) {
-                const lastPoint = (intersectedPoints.pop()).circlePosition
-
-                const p0 = lineDrawing.points[lineDrawing.points.length - 1]
-                const pTarget = lineDrawing.pointerPosition
-                const pDirection = lastPoint
-
-                const targetDx = pTarget.x - p0.x;
-                const targetDy = pTarget.y - p0.y;
-                const desiredMagnitude = Math.sqrt(targetDx * targetDx + targetDy * targetDy);
-
-                const directionDx = pDirection.x - p0.x;
-                const directionDy = pDirection.y - p0.y;
-
-                const directionMagnitude = Math.sqrt(directionDx * directionDx + directionDy * directionDy);
-                const normalizedDx = directionDx / directionMagnitude;
-                const normalizedDy = directionDy / directionMagnitude;
-    
-                lineDrawing.pointerPosition = {
-                    x: p0.x + normalizedDx * desiredMagnitude,
-                    y: p0.y + normalizedDy * desiredMagnitude
-                }
-                
-                linePoints = [...lineDrawing.points, lineDrawing.pointerPosition]
-                for (let circleNode of this.points) {
-                    p1 = linePoints[linePoints.length - 1]
-                    p2 = linePoints[linePoints.length - 2]
-
-                    const bool = circleNode.intersectsLine(p1, p2)                    
-                    circleNode.setHighlighted(bool)
-                }
-
-                
-            }
+            
         })
     }
 
@@ -221,6 +188,11 @@ export class GridManager {
         gridContainer.y = app.renderer.height / 2;
 
         this.gridContainer = gridContainer
+    }
+
+    resize() {
+        this.gridContainer.x = app.renderer.width / 2;
+        this.gridContainer.y = app.renderer.height / 2;
     }
 
     getPointerPosition(e) {
