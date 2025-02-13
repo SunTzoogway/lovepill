@@ -187,9 +187,8 @@ export class GridManager {
                 await sleep(1000)
                 await this.fadeOutGrid()
                 await sleep(1000)
-                lineDrawing.fadeOutLine()
-
-                
+                await lineDrawing.fadeOutLine()
+                window.location.href = 'home.html?fadeIn'
             }
         }
     }
@@ -288,18 +287,22 @@ class LineDrawing {
     }
     
     fadeOutLine() {
-        const oldLine = this.line
-        gsap.to(this.line, {
-            duration: 2.0,
-            pixi: { alpha: 0 },
-            onComplete: () => {
-                oldLine.destroy()
-            }
-        });
+        return new Promise((resolve) => {
 
-        this.line = new PIXI.Graphics()
-        app.stage.addChild(this.line)
-        this.points = []
+            const oldLine = this.line
+            gsap.to(this.line, {
+                duration: 2.0,
+                pixi: { alpha: 0 },
+                onComplete: () => {
+                    oldLine.destroy()
+                    resolve()
+                }
+            });
+
+            this.line = new PIXI.Graphics()
+            app.stage.addChild(this.line)
+            this.points = []
+        })
     }
 
     update() {
