@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: white;
+        }
+        #scene-container {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="scene-container"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script>
+        // Configuration
+        const CONFIG = {
+            boxWidth: 4,      // Width of the box
+            boxHeight: 4,     // Height of the box
+            boxDepth: 6,      // Depth of the box (increased)
+            animationDuration: 1.2,
+            zOffset: 0.1,     // Distance to keep from back wall to prevent z-fighting
+            frontColor: 0xffffff,
+            targetColor: 0x000000,
+            innerColor: 0xe0e0e0
+        };
+
+        // Scene setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ 
+            antialias: true,
+            alpha: true 
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0xffffff);
+        document.getElementById('scene-container').appendChild(renderer.domElement);
+
+        // Materials
+        const frontMaterial = new THREE.MeshBasicMaterial({ 
+            color: new THREE.Color(CONFIG.frontColor),
+            side: THREE.DoubleSide
+        });
+
+        const innerMaterial = new THREE.MeshStandardMaterial({ 
+            color: CONFIG.innerColor,
+            metalness: 0.1,
+            roughness: 0.8,
+            side: THREE.DoubleSide
+        });
+
+        // Front plane (this will be pushed in)
+        const frontPlane = new THREE.Mesh(
+            new THREE.PlaneGeometry(CONFIG.boxWidth, CONFIG.boxHeight),
+            frontMaterial
+        );
+        frontPlane.position.z = 0;
+        scene.add(frontPlane);
+
+        // Left plane
+        const leftPlane = new THREE.Mesh(
+            new THREE.PlaneGeometry(CONFIG.boxDepth, CONFIG.boxHeight),
+            innerMaterial
+        );
+        leftPlane.rotation.y = Math.PI / 2;
+        leftPlane.position.x = -CONFIG.boxWidth/2;
+        leftPlane.position.z = -CONFIG.boxDepth/2;
+        scene.add(leftPlane);
+
+        // Right plane
+        const rightPlane = new THREE.Mesh(
+            new THREE.PlaneGeometry(CONFIG.boxDepth, CONFIG.boxHeight),
+            innerMaterial
+        );
+        rightPlane.rotation.y = -Math.PI / 2;
+        rightPlane.position.x = CONFIG.boxWidth/2;
+        rightPlane.position.z = -CONFIG.boxDepth/2;
+        scene.add(rightPlane);
+
+        // Top plane
+        const topPlane = new THREE.Mesh(
+            new THREE.PlaneGeometry(CONFIG.boxWidth, CONFIG.boxDepth),
+            innerMaterial
+        );
+        topPlane.rotation.x = Math.PI / 2;
+        topPlane.position.y = CONFIG.boxHeight/2;
+        topPlane.position.z = -CONFIG.boxDepth/2;
+        scene.add(topPlane);
+
+        // Bottom plane
+        const bottomPlane = new THREE.Mesh(
+            new THREE.PlaneGeometry(CONFIG.boxWidth, CONFIG.boxDepth),
+            innerMaterial
+        );
+        bottomPlane.rotation.x = -Math.PI / 2;
+        bottomPlane.position.y = -CONFIG.boxHeight/2;
+        bottomPlane.position.z = -CONFIG.boxDepth/2;
+        scene.add(bottomPlane);
+
+        // Back plane
+        const backPlane = new THREE.Mesh(
+            new THREE.PlaneGeometry(CONFIG.boxWidth, CONFIG.boxHeight),
+            innerMaterial
+        );
+        backPlane.position.z = -CONFIG.boxDepth;
+        scene.add(backPlane);
+
+        // Lighting for inner surfaces
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+        
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(5, 5, 5);
+        scene.add(directionalLight);
+
+        // Camera position
+        camera.position.z = 5;
+
+        // Animation state
+        let isAnimating = false;
+        let isOpen = false;
+
+        // Helper function to convert hex color to RGB object
+        const hexToRgb = (hex) => {
+            const r = (hex >> 16) & 255;
+            const g = (hex >> 8) & 255;
+            const b = hex & 255;
+            return { r: r/255, g: g/255, b: b/255 };
+        };
+
+        // Click handler
+        document.addEventListener('click', () => {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            // Calculate target Z position, keeping offset from back wall
+            const targetZ = isOpen ? 0 : -(1 - CONFIG.zOffset);
+            const targetColor = isOpen ? CONFIG.frontColor : CONFIG.targetColor;
+            const currentColor = frontMaterial.color;
+            const targetColorRgb = hexToRgb(targetColor);
+
+            // Create a timeline for synchronized animations
+            const tl = gsap.timeline({
+                onComplete: () => {
+                    isAnimating = false;
+                    isOpen = !isOpen;
+                }
+            });
+
+            // Animate position
+            tl.to(frontPlane.position, {
+                z: targetZ,
+                duration: CONFIG.animationDuration,
+                ease: "power2.inOut"
+            }, 0);
+
+            // Animate color
+            // tl.to(currentColor, {
+            //     r: targetColorRgb.r,
+            //     g: targetColorRgb.g,
+            //     b: targetColorRgb.b,
+            //     duration: CONFIG.animationDuration,
+            //     ease: "power2.inOut"
+            // }, 0);
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>

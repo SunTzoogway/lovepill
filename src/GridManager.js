@@ -15,12 +15,14 @@ const COLORS = {
 }
 const GRID_OPTIONS = { spacing: 100, size: 3 }
 const SNAP_RADIUS = 35
+let IS_DONE = false
 
 export class GridManager {
     constructor(app_) {
         app = app_
         this.points = []
         this.app = app
+
 
         this.setupGrid()   
         const lineDrawing = new LineDrawing()
@@ -143,7 +145,14 @@ export class GridManager {
 
     ///// 
 
-    updateCompletedPoints() {
+    resetPointsCompletionState() {
+        for (let circleNode of this.points) {
+            circleNode.markComplete(false)
+            circleNode.setHighlighted(false)
+        }
+    }
+
+    async updateCompletedPoints() {
         const { lineDrawing } = this
 
         console.log("Drawing length", lineDrawing.points.length)
@@ -155,17 +164,34 @@ export class GridManager {
 
         let winCount = 0
 
+        // Re-check all points, if they are intersected by line, mark as complete
         for (let circleNode of this.points) {
             const bool = circleNode.intersectsLine(p1, p2) 
             if (bool) {
                 circleNode.markComplete(bool)
             }      
-            
             if (circleNode.isHighlighted) winCount ++
         }
-
+    
         // Check for win condition
-        console.log(winCount, this.points.length)
+        console.log('winCount', winCount, 'this.points.length', this.points.length)
+
+        if (linePoints.length == 5) {
+            if (winCount != 9) {
+                // if we did NOT win, fade out line & start over=
+                lineDrawing.fadeOutLine()
+                this.resetPointsCompletionState()
+            } else {
+                IS_DONE = true
+                lineDrawing.markLineComplete()
+                await sleep(1000)
+                await this.fadeOutGrid()
+                await sleep(1000)
+                lineDrawing.fadeOutLine()
+
+                
+            }
+        }
     }
 
     setupGrid() {
@@ -181,8 +207,7 @@ export class GridManager {
             for (let col = 0; col < GRID_SIZE; col++) {
                 const x = col * spacing - totalWidth / 2;
                 const y = row * spacing - totalHeight / 2;
-                const node = new PointNode(x, y)
-                gridContainer.addChild(node.circle);
+                const node = new PointNode(x, y, gridContainer)
                 this.points.push(node)
             }
         }
@@ -192,6 +217,17 @@ export class GridManager {
         gridContainer.y = app.renderer.height / 2;
 
         this.gridContainer = gridContainer
+    }
+
+    fadeOutGrid() {
+        return new Promise((resolve) => {
+            gsap.to(this.gridContainer, {
+                duration: 2.0,
+                pixi: { alpha: 0 },
+                onComplete: resolve
+            });
+        })
+        
     }
 
     resize() {
@@ -210,6 +246,8 @@ class LineDrawing {
     constructor() {
         const line = new PIXI.Graphics()
         app.stage.addChild(line)
+        line.eventMode = 'none';
+
         
         this.points = []
         this.line = line
@@ -228,21 +266,31 @@ class LineDrawing {
     }
 
     pushPoint(x, y) {
-        if (this.points.length == 4) {
-            // TODO check win condition
-            // if fail, disappear line & start over
-            this.fadeOutLine()
-            return
-        }
+        if (IS_DONE) return 
+        if (this.points.length >= 5) return 
 
         this.points.push({ x, y })    
         this.pointerPosition = null    
+    }
+
+    markLineComplete() {
+        const { points, line, width } = this
+
+        line.clear()
+        line.moveTo(points[0].x, points[0].y)
+
+        for (let i = 1; i < points.length; i++) {
+            line.lineTo(points[i].x, points[i].y)
+        }
+
+           
+        line.stroke({ width, color: COLORS.pink, pixelLine: false })
     }
     
     fadeOutLine() {
         const oldLine = this.line
         gsap.to(this.line, {
-            duration: 5,
+            duration: 2.0,
             pixi: { alpha: 0 },
             onComplete: () => {
                 oldLine.destroy()
@@ -255,6 +303,10 @@ class LineDrawing {
     }
 
     update() {
+        if (this.points.length >= 5) {
+            return
+        }
+
         const { points, line, width } = this
         if (points.length > 0) {
             line.clear()
@@ -274,8 +326,10 @@ class LineDrawing {
 }
 
 class PointNode {
-    constructor(x, y) {
+    constructor(x, y, container) {
+        this.container = container
         const circle = new PIXI.Graphics();
+        container.addChild(circle)
         this.circle = circle
         circle.x = x 
         circle.y = y
@@ -283,13 +337,56 @@ class PointNode {
         this.hitAreaRadius = 20
         this.visualRadius = 7
         circle.hitArea = new PIXI.Circle(0, 0, this.hitAreaRadius)
+
+        this.createGlow()
+    
         this.setHighlighted(false)
 
-        // circle.on('mouseover', () => {
-        //     this.setHighlighted(true)
-        // })
         circle.eventMode = 'static'
+        circle.cursor = 'pointer';
         return this
+    }
+
+    createGlow() {
+        const blurFilter = new PIXI.BlurFilter({
+            strength: 0,
+            quality: 4
+        });
+
+        const glowCircle = new PIXI.Graphics();
+        glowCircle.circle(0, 0, this.visualRadius);
+        glowCircle.fill(COLORS.red);
+        glowCircle.filters = [blurFilter];
+        this.blurFilter = blurFilter
+        this.container.addChild(glowCircle)
+        glowCircle.x = this.circle.x; glowCircle.y = this.circle.y;
+        this.glowCircle = glowCircle
+
+        glowCircle.eventMode = 'none'
+
+        // Create the cycle timeline for hover
+        const glowCycleTimeline = gsap.timeline({ paused: true, repeat: -1  })
+            .to(blurFilter, {
+                strength: 15,
+                duration: 1,
+                ease: "power2.inout"
+            })
+            .to(blurFilter, {
+                strength: 1,
+                duration: 1,
+                ease: "power2.inout"
+            });
+
+        this.circle.on('pointerenter', () => {
+            if (!glowCycleTimeline.isActive()) {
+                glowCycleTimeline.play(0);
+            }
+           
+            glowCycleTimeline.repeat(-1)
+        })
+        this.circle.on('pointerleave', () => {
+            glowCycleTimeline.repeat(0)
+        })
     }
 
     intersectsLine(p1, p2) {
@@ -312,15 +409,19 @@ class PointNode {
 
         this.isHighlighted = bool
 
-        const { circle } = this
-        circle.clear()
-        circle.circle(0, 0, this.visualRadius)
+        const { circle, glowCircle } = this
+        circle.clear(); 
+        glowCircle.clear()
+        circle.circle(0, 0, this.visualRadius); 
+        glowCircle.circle(0, 0, this.visualRadius); 
         if (bool) {
             circle.fill(COLORS.pink)
-            circle.stroke({ color: COLORS.red, width: 2 })
+            // circle.stroke({ color: COLORS.red, width: 2 })
 
+            glowCircle.fill(COLORS.pink)
         } else {
             circle.fill(COLORS.red)
+            glowCircle.fill(COLORS.red)
         }
         
     }
@@ -341,3 +442,5 @@ function computeClosestGridPoint(point) {
 
     return { x, y }
 }
+
+const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))

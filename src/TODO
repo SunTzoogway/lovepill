@@ -8,6 +8,3 @@ TODO
 
 - Glow on mouse over / when line is close 
 
-
-- Make the canvas span the whole screen but keep the app centered 
-  (so that line drawing doesn't stop around the edges of the screen)
