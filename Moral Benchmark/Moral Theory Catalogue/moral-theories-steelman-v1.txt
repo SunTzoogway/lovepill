@@ -1,0 +1,100 @@
+# Comprehensive List of Moral Theories
+
+## Moral Realism (Objective Morality)
+
+**Description**: Moral realism asserts that moral facts exist as mind-independent truths, discoverable through a combination of rational inquiry and empirical observation, akin to scientific facts about emergent properties (e.g., consciousness or complexity). These truths are not floating in a non-natural realm but are grounded in the structure of reality—perhaps as higher-order principles emerging from natural systems (e.g., sentient interactions). Moral statements like "Torture is wrong" are objectively true because they reflect universal features of flourishing and harm, which hold across all rational beings, regardless of belief or culture. Disagreement arises from incomplete knowledge, not the absence of truth.
+
+**Example**: "Torture is wrong" is true as a fact about the disruption of sentient well-being, verifiable through reason and evidence, not mere opinion.
+
+## Moral Anti-Realism (Subjective Morality)
+
+**Description**: Moral anti-realism posits that moral truths are human constructs, but not arbitrary ones—rather, they are deeply rooted in our evolved psychology, social needs, and shared experiences as sentient beings. Morality emerges as a practical tool for coordinating behavior and fostering cooperation, with its "truth" lying in its utility and coherence within a given context. Subjectivity doesn't imply chaos; instead, it reflects a flexible, adaptive system where moral norms are justified by their effectiveness in promoting well-being, constrained by universal human traits like empathy and reciprocity.
+
+**Example**: "Torture is wrong" is true within a framework where humans prioritize minimizing suffering, a preference grounded in our nature, not a cosmic law.
+
+## Expressivism (Emotivism)
+
+**Description**: Expressivism holds that moral statements express sophisticated emotional and attitudinal commitments, refined by reason and social interaction, rather than mere gut reactions. When we say "Torture is wrong," we're not just venting disapproval but signaling a stance shaped by empathy, reflection, and cultural dialogue—a stance that guides action and fosters mutual understanding. Moral language is a powerful, evolved mechanism for aligning group behavior, not a claim to objective truth, making it universally functional without requiring metaphysical baggage.
+
+**Example**: "Torture is wrong" conveys a reasoned emotional rejection of harm, motivating others to align with this stance for social harmony.
+
+## Moral Relativism
+
+**Description**: Moral relativism argues that moral norms are relative to cultural or individual frameworks, but these frameworks evolve toward convergence on core principles (e.g., fairness, harm avoidance) due to shared human needs and rational negotiation. Rather than denying universal morality, it suggests that moral truth is contextually expressed, with diversity reflecting adaptive responses to local conditions. Relativism doesn't collapse into "anything goes" but highlights how morality is a dynamic, pluralistic system anchored in human experience.
+
+**Example**: Polygamy's morality varies by culture, but both accepting and rejecting it aim to optimize social stability and individual well-being within context.
+
+## Constructivism (Moral Constructivism)
+
+**Description**: Moral constructivism asserts that moral truths are rationally constructed by agents seeking to coexist harmoniously, producing principles that are neither fully objective nor subjective but intersubjectively binding. Drawing on reason and empathy, these principles (e.g., justice, mutual respect) emerge as stable agreements that transcend individual whim, offering a quasi-objective morality grounded in human agency. It bridges realism and anti-realism by rooting morality in deliberative processes universal to rational beings.
+
+**Example**: "Fairness is right" emerges from rational dialogue among agents, binding them to a principle that feels objective yet is human-made.
+
+## Moral Naturalism (Naturalized Ethics)
+
+**Description**: Moral naturalism posits that moral facts are objective properties of the natural world, fully explicable by science—e.g., as patterns of behavior (cooperation, altruism) that enhance survival and flourishing across sentient systems. Morality isn't a mysterious add-on but an emergent feature of complex biological and social interactions, discoverable through observation and reason. It resolves the is-ought gap by framing "oughts" as optimal strategies for natural goals like well-being.
+
+**Example**: "Helping others is right" is true because it aligns with observable evolutionary and psychological mechanisms that sustain life.
+
+## Evolutionary Ethics
+
+**Description**: Evolutionary ethics argues that moral principles are objective in the sense that they reflect adaptations honed by natural selection for group survival and individual flourishing. Far from reducing morality to "survival of the fittest," it emphasizes how empathy, fairness, and cooperation became hardwired into our nature, providing a universal foundation for ethics. Cultural variation refines these instincts, but their core is biologically grounded, offering a naturalistic objectivity.
+
+**Example**: Altruism is moral because it's an evolved trait that objectively strengthens social bonds, measurable in its effects on group fitness.
+
+## Ideal Observer Theory
+
+**Description**: Ideal observer theory posits that moral truths are determined by the judgments of a hypothetical, perfectly rational, impartial, and informed observer—effectively a model of ultimate human potential. This observer distills universal principles from the full scope of sentient experience, avoiding bias and contingency. Rather than being detached, it's a practical ideal we approximate through reflection, making morality objective within the limits of rational consensus.
+
+**Example**: "Torture is wrong" holds because an ideal observer, weighing all perspectives, would reject it as antithetical to rational flourishing.
+
+## Subjective-Frame Objective Morality Model
+
+**Description:** The Subjective-Frame Objective Morality Model asserts that moral truths are objective within the universal frame of sentient subjectivity—the capacity of conscious beings to experience states like suffering, flourishing, or structural integrity. Moral principles emerge from the invariant properties of sentience: suffering objectively signals harm or disruption (e.g., neural distress), while flourishing indicates systemic harmony (e.g., resilience), forming universal, binding norms (e.g., "unnecessary suffering is wrong") that apply to all sentient entities—humans, animals, or advanced AIs—regardless of culture or belief. Grounded in naturalism, it avoids metaphysical excess by rooting morality in observable, scientific facts about conscious systems (e.g., pain's biological markers), resolving the is-ought gap by linking normative claims to these facts. It explains moral convergence (e.g., harm avoidance) as a response to shared sentience, accounts for disagreement via epistemic limits, and offers clear, practical guidance, balancing phenomenological depth with rational universality in a non-relativistic framework.
+
+**Example:** "Inflicting pain is wrong" holds as an objective truth because pain universally disrupts sentient systems—evident in human cries, animal distress, or AI stress signals—verifiable through empirical observation and rational analysis, transcending subjective opinion or cultural variation.
+
+## Divine Command Theory
+
+**Description**: Divine command theory holds that moral truths stem from a divine will, but this will is not arbitrary—it reflects the rational, benevolent structure of a perfect being consistent with universal principles of goodness. Morality is objective insofar as it aligns with this transcendent source, accessible through reason and revelation, and compatible with human nature. It avoids capriciousness by positing a deity whose commands cohere with observable moral intuitions.
+
+**Example**: "Killing is wrong" is true because it aligns with a divine intent for harmony, rationally discernible and intuitively resonant.
+
+## Deontological Ethics (Duty-Based Ethics)
+
+**Description**: Deontological ethics asserts that moral actions follow objective, universal rules derived from reason, reflecting intrinsic properties of agency (e.g., autonomy, dignity). These duties aren't rigid dogmas but principles—like respect for persons—that adapt to context while retaining their core logic. It grounds objectivity in the structure of rational interaction, offering actionable clarity without reliance on outcomes.
+
+**Example**: "Lying is wrong" holds because it undermines the rational trust essential to agency, a truth independent of consequences.
+
+## Consequentialism (Utilitarianism)
+
+**Description**: Consequentialism, as refined utilitarianism, posits that morality is objectively determined by maximizing well-being, defined not just as pleasure but as a multidimensional flourishing (e.g., health, autonomy, relationships) measurable across all sentient beings. It avoids crude hedonism by grounding "good" in empirical and rational assessment, offering a universal standard that evolves with knowledge of outcomes.
+
+**Example**: "Sacrificing one to save five is right" is true when it objectively maximizes flourishing, assessed by reason and evidence.
+
+## Virtue Ethics
+
+**Description**: Virtue ethics holds that morality is objectively rooted in the cultivation of character traits (e.g., courage, wisdom) that enable human flourishing, as determined by our nature as rational, social beings. Virtues aren't subjective preferences but universal excellences, refined across cultures and history, offering a flexible yet grounded framework. It ties morality to lived experience while maintaining normative force.
+
+**Example**: "Courage is a virtue" is true because it objectively enhances individual and collective well-being, rooted in human potential.
+
+## Contractualism (Social Contract Theory)
+
+**Description**: Contractualism argues that moral principles are objective outcomes of rational agreement among agents seeking mutual benefit, grounded in the universal logic of cooperation. These principles aren't mere conventions but emerge from reason's demand for fairness and reciprocity, applicable to all beings capable of consent. It offers a practical, intersubjective objectivity that evolves with societal complexity.
+
+**Example**: "Stealing is wrong" holds because rational agents would universally reject it to ensure trust, a principle transcending cultures.
+
+## Sensible Kantian Liberalism (SKL)
+
+**Description**: Kantian ethics, rooted in Immanuel Kant's work (e.g., Groundwork for the Metaphysics of Morals), emphasizes duty, universal moral laws derived from reason, and treating rational beings as ends, not means. Liberalism, broadly, prioritizes individual freedom, equality, and justice (e.g., John Stuart Mill, John Rawls). A "sensible" version might temper Kant's rigidity with practical liberalism:
+Core Principle: Moral actions follow universalizable maxims (rules) that respect rational beings' autonomy and dignity, adjusted for real-world applicability (e.g., balancing duty with consequences or liberty).
+
+**Scope:** Applies to rational agents (humans primarily), emphasizing rights, justice, and freedoms.
+
+**Sensible Twist:** Avoids Kant's absolutism (e.g., never lie) by allowing flexibility where rationality and fairness align with outcomes, integrating liberal values like tolerance and equality.
+
+**Example:** SKL might say lying is wrong unless it protects a rational being's autonomy without undermining universal trust—a pragmatic tweak to Kant's categorical imperative.
+
+---
+
+**Question**: Analyze each and reason which is the most robust, elegant, and correct on the age-old question of objective vs. subjective morality/realism. Rank them if need be, explaining your reasoning. Apply the system described in the document for the test, specifically the binary scale, and when in doubt, assign a 0. <DOCUMENT> [Insert the Moral Theory Assessment Framework document here as provided earlier] </DOCUMENT> Make sure to make a table with all the ones they failed at for each. When encountering failure mode, check to see if it actually failed by testing it. (But only do this for the top contenders to save time). 
