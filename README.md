@@ -12,7 +12,7 @@ trol, and one is a very surface level but still valid summary of my own moral fr
 * Reach out to me on twitter: @suntzoogway to give me feedback or ask Qs. I'm looking for:
     1. More criterion for the moral theory benchmark
     2. Better steelmen of the theories in the list, (although this is currently a draft)
-    3. Mora moral theories you find crucial to add to the catalogue (I will be adding Deutsche's principle of morality, Lesswrong/EA theories, and religious denominational theories among many others)
+    3. Mora moral theories you find crucial to add to the catalogue (I will be adding Deutsche's principle of morality, Lesswrong/EA theories, and religious denominational theories among many others)  
 
 
 
