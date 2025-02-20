@@ -10,3 +10,6 @@ PS: question / prompt is inside the text files/ .md’s at the bottom. More info
 * My theory comes first in both the normal version of the theories, and the LLMd steel manned version of the theories. Although sometimes it does vary, it’s most of the time first, and always top 4 out of 15. 
 *  Moral Naturalism and contractualism are contenders. 
 * SKL (my gf’s current philosophical stance) is a top contender, and is also the control theory as the text is the same in both draft docs. Interesting to note her theory does move down relatively to the rest because it wasn’t given the steel man boost like the others. 
+
+### Screenshots
+* Grok 3 screenshots show what happens when you run the normal base version of the 15 theories through the benchmark and rank them, and the same for the steelmanned version of the summaries of each moral theory. 
