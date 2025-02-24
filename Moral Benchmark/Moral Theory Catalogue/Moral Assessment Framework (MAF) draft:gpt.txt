@@ -1,0 +1,78 @@
+Moral Assessment Framework (MAF)
+Overview
+The MAF evaluates moral theories or claims (e.g., "utilitarianism," "killing is always wrong") through five core pillars: Conceptual Robustness, Empirical Alignment, Practical Viability, Intuitive Resonance, and Systemic Scalability. Each pillar has specific tests, scored on a 0–10 scale, with a final weighted aggregate to reflect overall performance. The process is iterative, allowing refinement based on feedback or new data.
+Pillar 1: Conceptual Robustness
+Purpose: Assess the internal logic and coherence of the theory/claim.
+Tests:  
+
+    Logical Consistency Check: Are the premises contradiction-free? (e.g., Does "maximize happiness" conflict with "ignore individual rights" in edge cases?)  
+        Tool: Formal logic analysis or reductio ad absurdum arguments.  
+        Metric: Number of unresolved contradictions (0 = none, 10 = fully consistent).
+    Explanatory Scope: How many moral phenomena (e.g., duty, fairness, guilt) does it account for?  
+        Tool: Compare against a standardized list of moral concepts (e.g., Haidt’s moral foundations).  
+        Metric: Breadth of coverage (0 = narrow, 10 = comprehensive).
+    Reflective Equilibrium: Does it balance general principles with specific case judgments after iterative adjustment?  
+        Tool: Panel of evaluators runs test cases (e.g., trolley problem, charity obligations).  
+        Metric: Degree of alignment post-adjustment (0 = incoherent, 10 = fully equilibrated).
+
+Scoring: Average of three tests (max 10).
+Pillar 2: Empirical Alignment
+Purpose: Test compatibility with observable human behavior and scientific data.
+Tests:  
+
+    Behavioral Fit: Does it predict or explain real moral decisions?  
+        Tool: Experimental philosophy studies (e.g., survey responses to dilemmas).  
+        Metric: Correlation with aggregate human judgments (0 = no match, 10 = strong match).
+    Neuroscience Corroboration: Are its mechanisms plausible given brain function?  
+        Tool: Compare to fMRI/psychology data (e.g., Greene’s dual-process theory).  
+        Metric: Alignment with neural evidence (0 = contradicted, 10 = supported).
+    Evolutionary Plausibility: Could it have emerged from human evolution?  
+        Tool: Assess against evolutionary psychology (e.g., kin altruism, reciprocal cooperation).  
+        Metric: Fit with adaptive origins (0 = implausible, 10 = highly plausible).
+
+Scoring: Average of three tests (max 10).
+Pillar 3: Practical Viability
+Purpose: Evaluate real-world applicability and outcomes.
+Tests:  
+
+    Decision-Making Utility: Can it guide clear choices in complex scenarios?  
+        Tool: Apply to policy cases (e.g., healthcare rationing, AI ethics).  
+        Metric: Clarity and decisiveness of guidance (0 = paralyzing, 10 = actionable).
+    Outcome Assessment: Do its prescriptions produce desirable results?  
+        Tool: Simulate or analyze historical applications (e.g., utilitarianism in welfare economics).  
+        Metric: Alignment with flourishing metrics (e.g., Nussbaum’s capabilities) (0 = harmful, 10 = beneficial).
+    Feasibility: Is it implementable given resource and cognitive constraints?  
+        Tool: Cost-benefit analysis of adoption (e.g., training, enforcement).  
+        Metric: Practicality score (0 = utopian, 10 = realistic).
+
+Scoring: Average of three tests (max 10).
+Pillar 4: Intuitive Resonance
+Purpose: Gauge alignment with widely held moral intuitions.
+Tests:  
+
+    Cross-Cultural Acceptance: Does it resonate across diverse populations?  
+        Tool: Surveys or ethnographic data from multiple societies.  
+        Metric: Agreement rate (0 = universally rejected, 10 = universally endorsed).
+    Thought Experiment Robustness: Does it hold up in canonical moral dilemmas?  
+        Tool: Test against a battery of scenarios (e.g., trolley, lifeboat, violinist).  
+        Metric: Intuitive plausibility across cases (0 = absurd, 10 = compelling).
+    Emotional Coherence: Does it feel morally satisfying or motivating?  
+        Tool: Psychological studies on emotional response (e.g., guilt, pride).  
+        Metric: Emotional fit (0 = alienating, 10 = resonant).
+
+Scoring: Average of three tests (max 10).
+Pillar 5: Systemic Scalability
+Purpose: Assess performance across levels (individual, group, global) and over time.
+Tests:  
+
+    Scale Consistency: Does it work from personal to societal levels?  
+        Tool: Apply to nested scenarios (e.g., family loyalty vs. global justice).  
+        Metric: Consistency across scales (0 = breaks down, 10 = seamless).
+    Long-Term Stability: Does it sustain moral systems over generations?  
+        Tool: Model or historical analysis (e.g., deontology in legal codes).  
+        Metric: Durability score (0 = unstable, 10 = enduring).
+    Adaptability: Can it handle novel challenges (e.g., AI, climate crises)?  
+        Tool: Stress-test with emerging ethical issues.  
+        Metric: Flexibility (0 = rigid, 10 = adaptive).
+
+Scoring: Average of three tests (max 10).

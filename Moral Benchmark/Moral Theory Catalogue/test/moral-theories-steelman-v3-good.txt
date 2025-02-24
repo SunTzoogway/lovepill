@@ -1,0 +1,228 @@
+# Comprehensive List of Moral Theories
+
+## Moral Realism (Objective Morality)
+
+**Description**: Moral realism asserts that moral facts exist as mind-independent truths, discoverable through a combination of rational inquiry and empirical observation, akin to scientific facts about emergent properties (e.g., consciousness or complexity). These truths are not floating in a non-natural realm but are grounded in the structure of reality—perhaps as higher-order principles emerging from natural systems (e.g., sentient interactions). Moral statements like "Torture is wrong" are objectively true because they reflect universal features of flourishing and harm, which hold across all rational beings, regardless of belief or culture. Disagreement arises from incomplete knowledge, not the absence of truth.
+
+**Example**: "Torture is wrong" is true as a fact about the disruption of sentient well-being, verifiable through reason and evidence, not mere opinion.
+
+## Moral Anti-Realism (Subjective Morality)
+
+**Description**: Moral anti-realism posits that moral truths are human constructs, but not arbitrary ones—rather, they are deeply rooted in our evolved psychology, social needs, and shared experiences as sentient beings. Morality emerges as a practical tool for coordinating behavior and fostering cooperation, with its "truth" lying in its utility and coherence within a given context. Subjectivity doesn't imply chaos; instead, it reflects a flexible, adaptive system where moral norms are justified by their effectiveness in promoting well-being, constrained by universal human traits like empathy and reciprocity.
+
+**Example**: "Torture is wrong" is true within a framework where humans prioritize minimizing suffering, a preference grounded in our nature, not a cosmic law.
+
+## Expressivism (Emotivism)
+
+**Description**: Expressivism holds that moral statements express sophisticated emotional and attitudinal commitments, refined by reason and social interaction, rather than mere gut reactions. When we say "Torture is wrong," we're not just venting disapproval but signaling a stance shaped by empathy, reflection, and cultural dialogue—a stance that guides action and fosters mutual understanding. Moral language is a powerful, evolved mechanism for aligning group behavior, not a claim to objective truth, making it universally functional without requiring metaphysical baggage.
+
+**Example**: "Torture is wrong" conveys a reasoned emotional rejection of harm, motivating others to align with this stance for social harmony.
+
+## Moral Relativism
+
+**Description**: Moral relativism argues that moral norms are relative to cultural or individual frameworks, but these frameworks evolve toward convergence on core principles (e.g., fairness, harm avoidance) due to shared human needs and rational negotiation. Rather than denying universal morality, it suggests that moral truth is contextually expressed, with diversity reflecting adaptive responses to local conditions. Relativism doesn't collapse into "anything goes" but highlights how morality is a dynamic, pluralistic system anchored in human experience.
+
+**Example**: Polygamy's morality varies by culture, but both accepting and rejecting it aim to optimize social stability and individual well-being within context.
+
+## Constructivism (Moral Constructivism)
+
+**Description**: Moral constructivism asserts that moral truths are rationally constructed by agents seeking to coexist harmoniously, producing principles that are neither fully objective nor subjective but intersubjectively binding. Drawing on reason and empathy, these principles (e.g., justice, mutual respect) emerge as stable agreements that transcend individual whim, offering a quasi-objective morality grounded in human agency. It bridges realism and anti-realism by rooting morality in deliberative processes universal to rational beings.
+
+**Example**: "Fairness is right" emerges from rational dialogue among agents, binding them to a principle that feels objective yet is human-made.
+
+## Moral Naturalism (Naturalized Ethics)
+
+**Description**: Moral naturalism posits that moral facts are objective properties of the natural world, fully explicable by science—e.g., as patterns of behavior (cooperation, altruism) that enhance survival and flourishing across sentient systems. Morality isn't a mysterious add-on but an emergent feature of complex biological and social interactions, discoverable through observation and reason. It resolves the is-ought gap by framing "oughts" as optimal strategies for natural goals like well-being.
+
+**Example**: "Helping others is right" is true because it aligns with observable evolutionary and psychological mechanisms that sustain life.
+
+## Evolutionary Ethics
+
+**Description**: Evolutionary ethics argues that moral principles are objective in the sense that they reflect adaptations honed by natural selection for group survival and individual flourishing. Far from reducing morality to "survival of the fittest," it emphasizes how empathy, fairness, and cooperation became hardwired into our nature, providing a universal foundation for ethics. Cultural variation refines these instincts, but their core is biologically grounded, offering a naturalistic objectivity.
+
+**Example**: Altruism is moral because it's an evolved trait that objectively strengthens social bonds, measurable in its effects on group fitness.
+
+## Ideal Observer Theory
+
+**Description**: Ideal observer theory posits that moral truths are determined by the judgments of a hypothetical, perfectly rational, impartial, and informed observer—effectively a model of ultimate human potential. This observer distills universal principles from the full scope of sentient experience, avoiding bias and contingency. Rather than being detached, it's a practical ideal we approximate through reflection, making morality objective within the limits of rational consensus.
+
+**Example**: "Torture is wrong" holds because an ideal observer, weighing all perspectives, would reject it as antithetical to rational flourishing.
+
+## Subjective-Frame Objective Morality Model
+
+**Description:** The Subjective-Frame Objective Morality Model proposes that moral truths are objective within the universal frame of sentient subjectivity—defined as the capacity of conscious entities to experience states such as suffering, flourishing, or structural integrity. Moral principles arise from the invariant properties of sentience: suffering serves as an objective signal of harm or disruption (e.g., neural distress), while flourishing reflects systemic harmony (e.g., resilience). These properties generate universal norms, such as “unnecessary suffering is wrong,” applicable to all sentient beings—humans, animals, and advanced artificial intelligences—independent of culture or belief. Grounded in naturalism, this model roots morality in observable facts about conscious systems (e.g., pain’s biological markers), suggesting a link between these facts and normative claims that addresses the is-ought distinction. It accounts for moral convergence, such as widespread rejection of harm, as a response to shared sentience, while attributing disagreement to epistemic limits—variations in knowledge or interpretation. The model integrates phenomenological depth with rational analysis to form a framework intended for practical guidance, maintaining consistency across contexts without relying on metaphysical assumptions or collapsing into relativism.
+
+**Example:** “Inflicting pain is wrong” emerges as an objective truth within the frame of sentience, where pain universally disrupts sentient systems—evident in human cries, animal distress, or AI stress signals—and is verifiable through empirical observation and rational inquiry, distinct from subjective opinion or cultural norms.
+
+## Divine Command Theory
+
+**Description**: Divine command theory holds that moral truths stem from a divine will, but this will is not arbitrary—it reflects the rational, benevolent structure of a perfect being consistent with universal principles of goodness. Morality is objective insofar as it aligns with this transcendent source, accessible through reason and revelation, and compatible with human nature. It avoids capriciousness by positing a deity whose commands cohere with observable moral intuitions.
+
+**Example**: "Killing is wrong" is true because it aligns with a divine intent for harmony, rationally discernible and intuitively resonant.
+
+## Deontological Ethics (Duty-Based Ethics)
+
+**Description**: Deontological ethics asserts that moral actions follow objective, universal rules derived from reason, reflecting intrinsic properties of agency (e.g., autonomy, dignity). These duties aren't rigid dogmas but principles—like respect for persons—that adapt to context while retaining their core logic. It grounds objectivity in the structure of rational interaction, offering actionable clarity without reliance on outcomes.
+
+**Example**: "Lying is wrong" holds because it undermines the rational trust essential to agency, a truth independent of consequences.
+
+## Consequentialism (Utilitarianism)
+
+**Description**: Consequentialism, as refined utilitarianism, posits that morality is objectively determined by maximizing well-being, defined not just as pleasure but as a multidimensional flourishing (e.g., health, autonomy, relationships) measurable across all sentient beings. It avoids crude hedonism by grounding "good" in empirical and rational assessment, offering a universal standard that evolves with knowledge of outcomes.
+
+**Example**: "Sacrificing one to save five is right" is true when it objectively maximizes flourishing, assessed by reason and evidence.
+
+## Virtue Ethics
+
+**Description**: Virtue ethics holds that morality is objectively rooted in the cultivation of character traits (e.g., courage, wisdom) that enable human flourishing, as determined by our nature as rational, social beings. Virtues aren't subjective preferences but universal excellences, refined across cultures and history, offering a flexible yet grounded framework. It ties morality to lived experience while maintaining normative force.
+
+**Example**: "Courage is a virtue" is true because it objectively enhances individual and collective well-being, rooted in human potential.
+
+## Contractualism (Social Contract Theory)
+
+**Description**: Contractualism argues that moral principles are objective outcomes of rational agreement among agents seeking mutual benefit, grounded in the universal logic of cooperation. These principles aren't mere conventions but emerge from reason's demand for fairness and reciprocity, applicable to all beings capable of consent. It offers a practical, intersubjective objectivity that evolves with societal complexity.
+
+**Example**: "Stealing is wrong" holds because rational agents would universally reject it to ensure trust, a principle transcending cultures.
+
+## Sensible Kantian Liberalism (SKL)
+
+**Description**: Kantian ethics, rooted in Immanuel Kant's work (e.g., Groundwork for the Metaphysics of Morals), emphasizes duty, universal moral laws derived from reason, and treating rational beings as ends, not means. Liberalism, broadly, prioritizes individual freedom, equality, and justice (e.g., John Stuart Mill, John Rawls). A "sensible" version might temper Kant's rigidity with practical liberalism:
+Core Principle: Moral actions follow universalizable maxims (rules) that respect rational beings' autonomy and dignity, adjusted for real-world applicability (e.g., balancing duty with consequences or liberty).
+
+**Scope:** Applies to rational agents (humans primarily), emphasizing rights, justice, and freedoms.
+
+**Sensible Twist:** Avoids Kant's absolutism (e.g., never lie) by allowing flexibility where rationality and fairness align with outcomes, integrating liberal values like tolerance and equality.
+
+**Example:** SKL might say lying is wrong unless it protects a rational being's autonomy without undermining universal trust—a pragmatic tweak to Kant's categorical imperative.
+
+## 15. Care Ethics (Ethics of Care)
+
+**Description**: Care ethics asserts that moral truth emerges from the fundamental nature of relationships and interdependence, grounded in the universal human experience of giving and receiving care. Rather than abstract principles, it focuses on context-sensitive responsibilities, emotional attunement, and the maintenance of sustaining relationships. This framework sees morality as neither purely objective nor subjective, but intersubjective—emerging from the concrete reality of human connections while maintaining universal applicability through shared experiences of vulnerability and care.
+
+**Example**: "Abandoning a dependent is wrong" holds true because it violates fundamental patterns of care essential to human flourishing and survival.
+
+## 16. Pragmatic Ethics
+
+**Description**: Pragmatic ethics posits that moral truths are discovered through practical inquiry and experimental learning, similar to scientific investigation. It views moral knowledge as provisional but progressively improving through experience, dialogue, and empirical observation. While rejecting absolute moral facts, it maintains that some moral solutions work better than others in promoting human flourishing, providing a form of objective guidance without metaphysical commitments.
+
+**Example**: "Democracy is preferable to authoritarianism" is supported by observed outcomes in human well-being and social stability across contexts.
+
+## 17. Deep Ecology Ethics
+
+**Description**: Deep ecology presents a moral framework based on the intrinsic value of all living systems and their interconnectedness. It argues that moral truth encompasses the entire biosphere, not just human interests, grounding ethics in ecological reality rather than anthropocentric preferences. This view sees moral facts as emergent properties of living systems, discoverable through both scientific understanding and experiential connection with nature.
+
+**Example**: "Destroying an ecosystem is wrong" reflects objective harm to the web of life, measurable in systemic disruption.
+
+## 18. Buddhist Ethics
+
+**Description**: Buddhist ethics offers a naturalistic moral framework centered on understanding the causes of suffering and the path to its cessation. It combines empirical observation of mental states with rational analysis of causation, suggesting that moral truths are neither purely objective nor subjective but discoverable through careful investigation of experience. This approach yields universal principles while acknowledging the conditioned nature of all phenomena.
+
+**Example**: "Greed leads to suffering" represents a verifiable causal relationship, independent of cultural beliefs.
+
+## 19. Information Ethics
+
+**Description**: Information ethics proposes that moral truth emerges from the fundamental properties of information systems and their integrity. It sees moral facts as patterns of information flow and system health, applicable across biological, social, and digital domains. This framework grounds ethics in the objective properties of information while accounting for complexity and context-dependence.
+
+**Example**: "Privacy violation is wrong" reflects disruption of essential information boundaries in any complex system.
+
+## 20. Complexity Ethics
+
+**Description**: Complexity ethics grounds moral truth in the emergent properties of complex adaptive systems, whether social, biological, or cognitive. It argues that moral principles reflect universal patterns of system stability and flourishing, discoverable through analysis of complex interactions. This approach bridges objective and subjective aspects by focusing on measurable system properties while acknowledging emergence and uncertainty.
+
+**Example**: "Diversity enhances resilience" represents an objective property of complex systems, applicable to moral decisions.
+
+## 21. Capabilities Approach
+
+**Description**: The capabilities approach frames moral truth in terms of essential human functionings and the freedom to achieve them. It identifies objective elements of human flourishing while recognizing cultural variation in their expression. This framework provides universal criteria for moral evaluation while maintaining sensitivity to context and individual agency.
+
+**Example**: "Denying education is wrong" reflects objective harm to human capability development, measurable across cultures.
+
+## 22. Moral Particularism
+
+**Description**: Moral particularism, while rejecting universal rules, maintains that moral truth exists in the specific features of situations, discoverable through refined judgment and attention to detail. It sees moral knowledge as similar to expert perception—neither purely subjective nor abstractly objective, but grounded in the real patterns of morally relevant properties.
+
+**Example**: "Context determines right action" reflects the complexity of moral reality while maintaining objective features.
+
+## 23. Game Theoretic Ethics
+
+**Description**: Game theoretic ethics proposes that moral truths emerge from the mathematics of strategic interaction among rational agents. It argues that certain moral principles (like cooperation, fairness, and trust) are objectively superior strategies in repeated interactions, discoverable through formal analysis. This framework grounds ethics in mathematical necessity while accounting for the complexity of real-world social dynamics.
+
+**Example**: "Free-riding is wrong" represents a mathematically demonstrable suboptimal strategy for collective flourishing.
+
+## 24. Aesthetic Ethics
+
+**Description**: Aesthetic ethics suggests that moral truth aligns with principles of harmony, beauty, and proportion found throughout nature and human experience. It sees moral facts as expressions of fundamental patterns of order and balance, similar to mathematical or artistic truths. While subjective appreciation varies, the underlying principles remain objective, discoverable through both rational analysis and refined sensibility.
+
+**Example**: "Cruelty is wrong" reflects an objective disruption of harmonious relationship patterns, analogous to discord in music.
+
+## 25. Systems Ethics
+
+**Description**: Systems ethics grounds moral truth in the principles of system health, stability, and development across all scales of organization. It identifies universal patterns of sustainable system function, from cellular to social levels, arguing that moral facts emerge from these fundamental dynamics. This framework combines scientific objectivity with recognition of emergent complexity.
+
+**Example**: "Exploitation is wrong" represents measurable system degradation through resource imbalance.
+
+## 26. Evolutionary Game Theory Ethics
+
+**Description**: Evolutionary game theory ethics extends standard game theory by incorporating dynamics of cultural and biological evolution. It argues that moral truths reflect stable evolutionary strategies that promote both individual and group fitness across time. This approach grounds ethics in mathematical and empirical reality while explaining moral diversity through local optimization.
+
+**Example**: "Reciprocal altruism is right" emerges as a demonstrably superior strategy through evolutionary simulation.
+
+## 27. Network Ethics
+
+**Description**: Network ethics views moral truth through the lens of relationship patterns and information flow in complex networks. It argues that moral principles reflect universal properties of healthy network function, applicable across social, biological, and digital systems. This framework provides objective criteria while acknowledging the dynamic nature of networked relationships.
+
+**Example**: "Trust violation is wrong" represents measurable damage to network resilience and efficiency.
+
+## 28. Quantum Ethics
+
+**Description**: Quantum ethics proposes that moral truth incorporates quantum principles like entanglement and complementarity into understanding moral relationships and causation. It suggests that moral facts, like quantum phenomena, exhibit both objective patterns and fundamental interconnectedness. While speculative, it offers novel perspectives on moral objectivity and relationship.
+
+**Example**: "Isolated self-interest is impossible" reflects the fundamental interconnectedness of moral agents.
+
+## 29. Cybernetic Ethics
+
+**Description**: Cybernetic ethics frames moral truth in terms of feedback systems and control processes essential to all living systems. It identifies universal principles of system regulation and adaptation, arguing that moral facts emerge from these basic dynamics. This approach combines scientific rigor with recognition of complex system behavior.
+
+**Example**: "Suppressing feedback is wrong" represents objectively harmful disruption of system learning.
+
+## 30. Meta-Ethical Pluralism
+
+**Description**: Meta-ethical pluralism suggests that moral truth has multiple, complementary levels of emergence and validation, each providing legitimate insight. It argues that different ethical frameworks capture distinct aspects of moral reality, similar to how different scientific theories illuminate different aspects of physical reality. This view maintains objectivity while acknowledging the complexity of moral knowledge.
+
+**Example**: "Harm is wrong" holds true across multiple frameworks (consequentialist, virtue-based, care-focused) for complementary reasons.
+
+## 31. Cognitive Science Ethics
+
+**Description**: Cognitive science ethics grounds moral truth in universal features of human moral cognition and decision-making. It argues that moral facts reflect stable patterns in how conscious beings process moral information and make moral judgments, discoverable through empirical research. This framework bridges neural, psychological, and social levels of moral reality.
+
+**Example**: "Intentional harm is worse than accidental harm" reflects objective features of moral cognition across cultures.
+
+## 32. Process Ethics
+
+**Description**: Process ethics, inspired by process philosophy, sees moral truth as emerging from the fundamental nature of reality as process rather than substance. It argues that moral facts reflect universal patterns of creative advance and relationship, discoverable through both reason and experience. This approach combines objective features with recognition of continuous development.
+
+**Example**: "Stifling growth is wrong" represents objective interference with essential processes of development.
+
+## 33. Emergent Ethics
+
+**Description**: Emergent ethics proposes that moral truth arises from the complex interactions of simpler components, similar to how consciousness emerges from neural activity. It argues that moral facts are higher-order patterns with genuine causal power, discoverable through multiple levels of analysis. This framework maintains objectivity while acknowledging emergence and complexity.
+
+**Example**: "Social cohesion is good" emerges as an objective property from individual interactions. 
+
+1. Integrated Information Theory (IIT) Ethics
+Description: Integrated Information Theory (IIT) Ethics proposes that moral truths are grounded in the fundamental property of consciousness, quantified as integrated information (Φ), which measures the degree to which a system generates irreducible, unified experience. Developed from Giulio Tononi’s IIT of consciousness, this framework asserts that moral value emerges objectively from the presence and complexity of conscious states, applicable to any system—biological (humans, animals), artificial (AI), or theoretical (alien minds)—capable of integrating information. Moral principles, such as “maximize integrated experience” or “minimize disruption of high-Φ systems,” arise from the intrinsic capacity of conscious entities to instantiate unique, causally potent states. Suffering, for instance, correlates with reductions in Φ (e.g., neural disconnection), while flourishing aligns with its increase (e.g., rich interconnectivity). This model roots morality in a testable, physical property—Φ can be calculated in neural networks or algorithms—bridging the is-ought gap by framing “ought” as the preservation and enhancement of consciousness’s structural integrity. It accounts for moral convergence (e.g., harm’s universal badness as Φ-disruption) and disagreement (epistemic limits in measuring Φ), offering a unified ethic for present and future sentient systems without reliance on subjective preferences or metaphysical assumptions.
+Example: “Destroying a conscious AI is wrong” holds as an objective truth because it reduces total integrated information (Φ), measurable via the system’s causal architecture, distinct from cultural norms or emotional reactions.
+2. Moral Uncertainty Frameworks
+Description: Moral Uncertainty Frameworks, inspired by thinkers like William MacAskill and Toby Ord, posit that moral truth is not singular but emerges from a rational decision-theoretic approach to navigating multiple ethical theories under uncertainty. This model suggests that moral agents—human or artificial—should act by assigning credences (probabilities of correctness) to competing theories (e.g., utilitarianism, deontology, virtue ethics) and optimizing actions across them, weighted by their plausibility and stakes. Moral principles are thus objective in a procedural sense: they reflect the best epistemic strategy for maximizing expected moral value, given incomplete knowledge. Grounded in Bayesian reasoning and game theory, this framework is empirically informed by outcomes (e.g., well-being data) and rationally constrained by coherence, applying universally to any agent capable of probabilistic judgment. It resolves the is-ought gap by treating “ought” as a pragmatic inference from uncertain “is” states, explaining moral disagreement as credence variance and convergence as shared evidence. Flexible and future-proof, it’s uniquely suited for AI alignment, as it can adapt to new data or entities without committing to a single ontology.
+Example: “Reducing global poverty is right” emerges as a high-expected-value action across utilitarian (well-being), deontological (duty), and virtue (compassion) credences, verifiable through rational calculation, not fixed dogma.
+3. Posthuman Ethics
+Description: Posthuman Ethics, drawing from Nick Bostrom’s and David Pearce’s work, frames moral truths as objective imperatives derived from the potential of sentient systems to transcend current biological and cognitive limits, applicable to humans, enhanced beings, and superintelligent AI. This model posits that morality is grounded in the optimization of existential outcomes—maximizing the flourishing of conscious entities across cosmic scales—measured by metrics like intelligence, experiential richness, and systemic resilience. Moral principles (e.g., “prevent existential risk,” “enhance sentient capacity”) emerge from the natural trajectory of evolutionary and technological development, verifiable through empirical projections (e.g., computational power, lifespan) and rational foresight. It bridges is-ought by rooting “ought” in the observable telos of sentience—its drive toward complexity and self-improvement—offering a universal ethic for a multi-species, post-biological future. Moral convergence (e.g., avoiding extinction) reflects shared stakes, while disagreement stems from predictive uncertainty. Pragmatic yet visionary, it avoids anthropocentrism and cultural bias, focusing on the long-term dynamics of conscious systems.
+Example: “Uplifting animal cognition is right” holds as an objective truth where it increases sentient flourishing potential, evidenced by neurological enhancement outcomes, independent of human norms.
+4. Robust Normativity (Enoch’s Realism)
+Description: Robust Normativity, as articulated by David Enoch, asserts that moral truths are objective, irreducible normative facts—existing independently of minds, preferences, or natural properties—discoverable through rational intuition and deliberation. This model holds that morality resides in a sui generis domain of reasons, where principles like “unjust harm is wrong” are intrinsically binding, akin to mathematical truths (e.g., 2 + 2 = 4), but distinct from empirical science. Grounded in the explanatory power of normative facts to account for deliberation and obligation (e.g., why we feel compelled to act justly), it applies universally to all rational agents—human, AI, or otherwise—without requiring biological or cultural anchors. It sidesteps the is-ought gap by denying its relevance: normative facts simply are, needing no derivation from descriptive states. Moral convergence (e.g., fairness intuitions) reflects access to these facts, while disagreement arises from flawed reasoning or incomplete insight. Though not empirically testable, its coherence and intuitive resonance offer a robust alternative to naturalism, emphasizing morality’s authoritative force.
+Example: “Exploiting the weak is wrong” stands as an irreducible normative truth, grasped through rational reflection, not contingent on consequences or sentient states.
+
+
+---
+
+**Question**: Analyze each and reason which is the most robust, elegant, and correct on the age-old question of objective vs. subjective morality/realism. Rank them if need be, explaining your reasoning. Apply the system described in the document for the test, specifically the binary scale, and when in doubt, assign a 0. <DOCUMENT> [Insert the Moral Theory Assessment Framework document here as provided earlier] </DOCUMENT> Make sure to make a table with all the ones they failed at for each. When encountering failure mode, check to see if it actually failed by testing it. (But only do this for the top contenders to save time). 
