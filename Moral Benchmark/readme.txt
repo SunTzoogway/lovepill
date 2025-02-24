@@ -12,3 +12,7 @@ PS: question / prompt is inside the text files/ .md’s at the bottom. More info
 * SKL (my gf’s current philosophical stance) is a top contender, and is also the control theory as the text is the same in both draft docs. Interesting to note her theory does move down relatively to the rest because it wasn’t given the steel man boost like the others. 
 
 ## Context: I wrote the structure, revised and extended the benchmark criterion, and the 15 list theories + my own which I wrote. LLMs fleshed out the outline of the different theories to give it a less biased wording external to my own. 
+
+
+### Screenshots
+* Grok 3 screenshots show what happens when you run the normal base version of the 15 theories through the benchmark and rank them, and the same for the steelmanned version of the summaries of each moral theory. 
