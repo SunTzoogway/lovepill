@@ -90,12 +90,31 @@ export class GridManager {
                 }
                 
                 let position = lineDrawing.pointerPosition
+                if (!position) {
+                    return // Exit if no line is being drawn
+                }
 
                 // Check if point is close enough to somewhere on the grid to snap
                 const closestGridPoint = computeClosestGridPoint(position)
                 const dist = distance(closestGridPoint, position)
                 if (dist <= SNAP_RADIUS) {
                     position = closestGridPoint
+                }
+
+                // Get the previous point to check line length
+                const prevPoint = lineDrawing.points[lineDrawing.points.length - 1]
+                if (prevPoint) {
+                    const length = lineLength(prevPoint, position)
+                    // Only accept the line if it's longer than 2 circle radii
+                    // (using the hitAreaRadius which is 20)
+                    if (length <= 40 && lineDrawing.points.length === 1) {
+                        // Reset everything if it's the first point and line is too short
+                        lineDrawing.reset()
+                        this.resetPointsCompletionState()
+                        return
+                    } else if (length <= 40) {
+                        return // Line too short, don't accept it
+                    }
                 }
 
                 lineDrawing.pushPoint(position.x, position.y)
@@ -326,6 +345,12 @@ class LineDrawing {
             line.stroke({ width, color: COLORS.red, pixelLine: false })
         }
     }
+
+    reset() {
+        this.points = []
+        this.line.clear()
+        this.pointerPosition = null
+    }
 }
 
 class PointNode {
@@ -447,3 +472,7 @@ function computeClosestGridPoint(point) {
 }
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+
+function lineLength(p1, p2) {
+    return distance(p1, p2)
+}
