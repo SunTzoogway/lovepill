@@ -58,6 +58,9 @@ export class GridManager {
         this.app = app
         this.soundInitialized = false
         
+        // Set background color to warm off-white
+        app.renderer.background.color = 0xFAF9F6;  // A soft, warm off-white
+        
         // Add this line to make GridManager accessible globally
         window.gridManager = this
 
@@ -436,12 +439,26 @@ class PointNode {
         circle.y = y
         circle.isCircle = true
         this.hitAreaRadius = 20
-        this.visualRadius = 7
+        this.visualRadius = 6  // Slightly smaller for cleaner appearance
+        
+        // Set resolution for higher quality circles
+        circle.resolution = 2;  // Increase resolution for smoother rendering
         circle.hitArea = new PIXI.Circle(0, 0, this.hitAreaRadius)
 
         this.createGlow()
     
-        this.setHighlighted(false)
+        // Update circle drawing with improved anti-aliasing and quality
+        circle.clear();
+        circle.lineStyle({
+            width: 1,  // Thin border
+            color: COLORS.red,
+            alignment: 0.5,
+            native: false
+        });
+        circle.beginFill(COLORS.red, 1);
+        // Draw slightly larger to account for border
+        circle.drawCircle(0, 0, this.visualRadius - 0.5);
+        circle.endFill();
 
         circle.eventMode = 'static'
         circle.cursor = 'pointer';
@@ -451,12 +468,23 @@ class PointNode {
     createGlow() {
         const blurFilter = new PIXI.BlurFilter({
             strength: 0,
-            quality: 4
+            quality: 8  // Increased blur quality
         });
 
         const glowCircle = new PIXI.Graphics();
-        glowCircle.circle(0, 0, this.visualRadius);
-        glowCircle.fill(COLORS.red);
+        glowCircle.resolution = 2;  // Match main circle resolution
+        
+        // Update glow circle drawing
+        glowCircle.lineStyle({
+            width: 1,
+            color: COLORS.red,
+            alignment: 0.5,
+            native: false
+        });
+        glowCircle.beginFill(COLORS.red, 1);
+        glowCircle.drawCircle(0, 0, this.visualRadius - 0.5);
+        glowCircle.endFill();
+        
         glowCircle.filters = [blurFilter];
         this.blurFilter = blurFilter
         this.container.addChild(glowCircle)
@@ -513,18 +541,30 @@ class PointNode {
         const { circle, glowCircle } = this
         circle.clear(); 
         glowCircle.clear()
-        circle.circle(0, 0, this.visualRadius); 
-        glowCircle.circle(0, 0, this.visualRadius); 
-        if (bool) {
-            circle.fill(COLORS.pink)
-            // circle.stroke({ color: COLORS.red, width: 2 })
-
-            glowCircle.fill(COLORS.pink)
-        } else {
-            circle.fill(COLORS.red)
-            glowCircle.fill(COLORS.red)
-        }
         
+        const color = bool ? COLORS.pink : COLORS.red;
+        
+        // Update main circle
+        circle.lineStyle({
+            width: 1,
+            color: color,
+            alignment: 0.5,
+            native: false
+        });
+        circle.beginFill(color, 1);
+        circle.drawCircle(0, 0, this.visualRadius - 0.5);
+        circle.endFill();
+
+        // Update glow circle
+        glowCircle.lineStyle({
+            width: 1,
+            color: color,
+            alignment: 0.5,
+            native: false
+        });
+        glowCircle.beginFill(color, 1);
+        glowCircle.drawCircle(0, 0, this.visualRadius - 0.5);
+        glowCircle.endFill();
     }
 }
 
