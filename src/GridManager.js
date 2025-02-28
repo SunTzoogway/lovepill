@@ -19,19 +19,20 @@ const GRID_OPTIONS = { spacing: 100, size: 3 }
 const SNAP_RADIUS = 35
 let IS_DONE = false
 
-// Initialize sound system after user interaction
+// Initialize sound system - split into preload and unmute steps
+function preloadSounds() {
+    // Add sounds to library
+    sound.add('line1', '/1.wav');
+    sound.add('line2', '/2.wav');
+    sound.add('line3', '/3.wav');
+    sound.add('line4', '/4.wav');
+    sound.add('line5', '/5.wav');
+    sound.add('error', '/error.wav');
+}
+
 function initSound() {
     return new Promise((resolve) => {
-        // Add sounds to library
-        sound.add('line1', '/1.wav');
-        sound.add('line2', '/2.wav');
-        sound.add('line3', '/3.wav');
-        sound.add('line4', '/4.wav');
-        sound.add('line5', '/5.wav');
-        sound.add('error', '/error.wav');  // Add error sound
-        
         const resumeAudio = async () => {
-            // Use sound.unmuteAll() instead of context.resume()
             sound.unmuteAll();
             document.removeEventListener('click', resumeAudio);
             document.removeEventListener('touchstart', resumeAudio);
@@ -60,7 +61,10 @@ export class GridManager {
         // Add this line to make GridManager accessible globally
         window.gridManager = this
 
-        // Initialize sound system
+        // Preload sounds immediately
+        preloadSounds();
+
+        // Initialize sound system (unmute) after user interaction
         initSound().then(() => {
             this.soundInitialized = true;
             console.log('Sound system ready');
