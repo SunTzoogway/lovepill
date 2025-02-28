@@ -23,12 +23,12 @@ let IS_DONE = false
 function initSound() {
     return new Promise((resolve) => {
         // Add sounds to library
-        sound.add('line1', 'public/1.wav');
-        sound.add('line2', 'public/2.wav');
-        sound.add('line3', 'public/3.wav');
-        sound.add('line4', 'public/4.wav');
-        sound.add('line5', 'public/5.wav');
-        sound.add('error', 'public/error.wav');  // Add error sound
+        sound.add('line1', './public/1.wav');
+        sound.add('line2', './public/2.wav');
+        sound.add('line3', './public/3.wav');
+        sound.add('line4', './public/4.wav');
+        sound.add('line5', './public/5.wav');
+        sound.add('error', './public/error.wav');  // Add error sound
         
         const resumeAudio = async () => {
             // Use sound.unmuteAll() instead of context.resume()
