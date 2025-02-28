@@ -1,9 +1,11 @@
 import * as PIXI from 'pixi.js';
+import { sound } from '@pixi/sound';
 import { gsap } from "gsap";
 import { PixiPlugin } from "gsap/PixiPlugin";
 import { lineIntersectCircle } from './LineCircleIntersection.js'
 import { snapToAngle } from './snapToAngle.js'
 window.PIXI = PIXI
+window.pixiSound = sound;
 
 gsap.registerPlugin(PixiPlugin);
 PixiPlugin.registerPIXI(PIXI);
@@ -17,12 +19,51 @@ const GRID_OPTIONS = { spacing: 100, size: 3 }
 const SNAP_RADIUS = 35
 let IS_DONE = false
 
+// Initialize sound system after user interaction
+function initSound() {
+    return new Promise((resolve) => {
+        // Add sounds to library
+        sound.add('line1', 'public/1.wav');
+        sound.add('line2', 'public/2.wav');
+        sound.add('line3', 'public/3.wav');
+        sound.add('line4', 'public/4.wav');
+        sound.add('line5', 'public/5.wav');
+        
+        const resumeAudio = async () => {
+            // Use sound.unmuteAll() instead of context.resume()
+            sound.unmuteAll();
+            document.removeEventListener('click', resumeAudio);
+            document.removeEventListener('touchstart', resumeAudio);
+            console.log('Audio resumed');
+            resolve();
+        };
+        
+        // Always attach the listeners
+        document.addEventListener('click', resumeAudio);
+        document.addEventListener('touchstart', resumeAudio);
+        
+        // If sound is already enabled, resolve immediately
+        if (!sound.muted) {
+            resolve();
+        }
+    });
+}
+
 export class GridManager {
     constructor(app_) {
         app = app_
         this.points = []
         this.app = app
+        this.soundInitialized = false
+        
+        // Add this line to make GridManager accessible globally
+        window.gridManager = this
 
+        // Initialize sound system
+        initSound().then(() => {
+            this.soundInitialized = true;
+            console.log('Sound system ready');
+        });
 
         this.setupGrid()   
         const lineDrawing = new LineDrawing()
@@ -197,17 +238,32 @@ export class GridManager {
 
         if (linePoints.length == 5) {
             if (winCount != 9) {
-                // if we did NOT win, fade out line & start over=
+                // if we did NOT win, fade out line & start over
                 lineDrawing.fadeOutLine()
                 this.resetPointsCompletionState()
             } else {
                 IS_DONE = true
                 lineDrawing.markLineComplete()
+                
+                // Play winning sound
+                if (this.soundInitialized && !sound.muted) {
+                    sound.play('line5');
+                }
+                
                 await sleep(1000)
                 await this.fadeOutGrid()
                 await sleep(1000)
                 await lineDrawing.fadeOutLine()
                 window.location.href = 'home.html?fadeIn'
+            }
+        }
+
+        // Play sound based on new line length
+        const lineLength = lineDrawing.points.length;
+        if (lineLength >= 1 && lineLength <= 5) {
+            if (this.soundInitialized && !sound.muted) {
+                console.log(`Playing sound: line${lineLength}`);
+                sound.play(`line${lineLength}`);
             }
         }
     }
@@ -289,6 +345,14 @@ class LineDrawing {
 
         this.points.push({ x, y })    
         this.pointerPosition = null    
+
+        // Play sound when first point is placed
+        if (this.points.length === 1) {
+            if (window.gridManager && window.gridManager.soundInitialized && !sound.muted) {
+                console.log('Playing sound: line1');
+                sound.play('line1');
+            }
+        }
     }
 
     markLineComplete() {
