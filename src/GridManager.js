@@ -28,6 +28,7 @@ function initSound() {
         sound.add('line3', 'public/3.wav');
         sound.add('line4', 'public/4.wav');
         sound.add('line5', 'public/5.wav');
+        sound.add('error', 'public/error.wav');  // Add error sound
         
         const resumeAudio = async () => {
             // Use sound.unmuteAll() instead of context.resume()
@@ -238,6 +239,10 @@ export class GridManager {
 
         if (linePoints.length == 5) {
             if (winCount != 9) {
+                // Play error sound
+                if (this.soundInitialized && !sound.muted) {
+                    sound.play('error');
+                }
                 // if we did NOT win, fade out line & start over
                 lineDrawing.fadeOutLine()
                 this.resetPointsCompletionState()
