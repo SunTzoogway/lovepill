@@ -8,7 +8,7 @@
     "deploy": "vite build && scp -r dist/* root@omarshehata.me:/var/www/html/lovepill/"
   },
   "devDependencies": {
-    "vite": "^2.7.2"
+    "vite": "^6.2.0"
   },
   "dependencies": {
     "gsap": "^3.12.7",
