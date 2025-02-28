@@ -27,7 +27,7 @@ function preloadSounds() {
     sound.add('line3', '/3.wav');
     sound.add('line4', '/4.wav');
     sound.add('line5', '/5.wav');
-    sound.add('error', '/error.wav');
+    sound.add('error', '/Error.wav');
 }
 
 function initSound() {
