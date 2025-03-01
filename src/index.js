@@ -12,7 +12,6 @@ async function init() {
 
     const app = new PIXI.Application();
     await app.init({ 
-      background: 'white',
       antialias: true, 
       autoDensity: true,
       resolution: window.devicePixelRatio || 1,
