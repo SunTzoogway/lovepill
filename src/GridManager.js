@@ -26,13 +26,11 @@ export class GridManager {
         this.app = app
         this.soundInitialized = false
         
-        // Set background color to warm off-white
-        app.renderer.background.color = 0xFAF9F6;  // A soft, warm off-white
+        // Background color is now set in index.js
         
-        // Add this line to make GridManager accessible globally
         window.gridManager = this
 
-        // Initialize sound system (unmute) after user interaction
+        // Only handle unmuting after interaction
         this.setupAudio();
 
         this.setupGrid()   
@@ -169,28 +167,27 @@ export class GridManager {
     }
 
     setupAudio() {
-        // Create one-time click handler for first interaction
         const firstInteraction = async () => {
-            // Remove listeners after first interaction
             document.removeEventListener('click', firstInteraction);
             document.removeEventListener('touchstart', firstInteraction);
-            
-            // Preload sounds
-            sound.add('line1', '/1.wav');
-            sound.add('line2', '/2.wav');
-            sound.add('line3', '/3.wav');
-            sound.add('line4', '/4.wav');
-            sound.add('line5', '/5.wav');
-            sound.add('error', '/Error.wav');
 
-            // Unmute and initialize
+            // Force audio context to resume
+            if (sound.context && sound.context.state === 'suspended') {
+                await sound.context.resume();
+            }
             sound.unmuteAll();
             this.soundInitialized = true;
             console.log('Sound system ready');
         };
 
-        document.addEventListener('click', firstInteraction);
-        document.addEventListener('touchstart', firstInteraction);
+        // Try to initialize audio context immediately
+        if (sound.context && sound.context.state === 'running') {
+            this.soundInitialized = true;
+            console.log('Sound system ready immediately');
+        } else {
+            document.addEventListener('click', firstInteraction);
+            document.addEventListener('touchstart', firstInteraction);
+        }
     }
 
     update() {
