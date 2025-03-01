@@ -171,17 +171,14 @@ export class GridManager {
             document.removeEventListener('click', firstInteraction);
             document.removeEventListener('touchstart', firstInteraction);
 
-            // Force audio context to resume
-            if (sound.context && sound.context.state === 'suspended') {
-                await sound.context.resume();
-            }
+            // Just unmute the sounds
             sound.unmuteAll();
             this.soundInitialized = true;
             console.log('Sound system ready');
         };
 
-        // Try to initialize audio context immediately
-        if (sound.context && sound.context.state === 'running') {
+        // Check if we can enable audio immediately
+        if (!sound.muted) {
             this.soundInitialized = true;
             console.log('Sound system ready immediately');
         } else {

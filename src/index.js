@@ -1,5 +1,5 @@
 import * as PIXI from 'pixi.js';
-import { GridManager  } from './GridManager';
+import { GridManager } from './GridManager';
 import { sound } from '@pixi/sound';
 
 /*
@@ -12,16 +12,35 @@ prototype: https://claude.site/artifacts/457878a7-91f3-448d-8689-eaddea499c43
 const BG_COLOR = 0xFAF9F6;
 const BG_COLOR_HEX = '#FAF9F6';
 
-// Create and load sounds before init
+// Initialize audio context immediately
+sound.init();
+
 async function preloadSounds() {
-    return Promise.all([
-        sound.add('line1', '/1.wav'),
-        sound.add('line2', '/2.wav'),
-        sound.add('line3', '/3.wav'),
-        sound.add('line4', '/4.wav'),
-        sound.add('line5', '/5.wav'),
-        sound.add('error', '/Error.wav')
-    ]);
+    const audioFiles = {
+        'line1': '/1.wav',
+        'line2': '/2.wav',
+        'line3': '/3.wav',
+        'line4': '/4.wav',
+        'line5': '/5.wav',
+        'error': '/Error.wav'
+    };
+
+    // Load all audio files
+    for (const [key, url] of Object.entries(audioFiles)) {
+        await sound.add(key, {
+            url: url,
+            preload: true,
+            loaded: (err, sound) => {
+                if (err) {
+                    console.error('Error loading sound:', err);
+                } else {
+                    console.log(`Sound ${key} loaded successfully`);
+                }
+            }
+        });
+    }
+    
+    console.log('All sounds loaded');
 }
 
 async function init() {
@@ -29,9 +48,12 @@ async function init() {
     document.body.style.backgroundColor = BG_COLOR_HEX;
     document.body.style.margin = '0';  // Remove default margins
 
-    // Wait for sounds to load before continuing
-    await preloadSounds();
-    console.log('Sounds preloaded');
+    try {
+        // Force preload all sounds before continuing
+        await preloadSounds();
+    } catch (error) {
+        console.error('Error preloading sounds:', error);
+    }
 
     const containerElement = document.querySelector('#pixi-container')
 
