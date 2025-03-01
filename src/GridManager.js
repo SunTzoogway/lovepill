@@ -19,38 +19,6 @@ const GRID_OPTIONS = { spacing: 100, size: 3 }
 const SNAP_RADIUS = 35
 let IS_DONE = false
 
-// Initialize sound system - split into preload and unmute steps
-function preloadSounds() {
-    // Add sounds to library
-    sound.add('line1', '/1.wav');
-    sound.add('line2', '/2.wav');
-    sound.add('line3', '/3.wav');
-    sound.add('line4', '/4.wav');
-    sound.add('line5', '/5.wav');
-    sound.add('error', '/Error.wav');
-}
-
-function initSound() {
-    return new Promise((resolve) => {
-        const resumeAudio = async () => {
-            sound.unmuteAll();
-            document.removeEventListener('click', resumeAudio);
-            document.removeEventListener('touchstart', resumeAudio);
-            console.log('Audio resumed');
-            resolve();
-        };
-        
-        // Always attach the listeners
-        document.addEventListener('click', resumeAudio);
-        document.addEventListener('touchstart', resumeAudio);
-        
-        // If sound is already enabled, resolve immediately
-        if (!sound.muted) {
-            resolve();
-        }
-    });
-}
-
 export class GridManager {
     constructor(app_) {
         app = app_
@@ -64,14 +32,8 @@ export class GridManager {
         // Add this line to make GridManager accessible globally
         window.gridManager = this
 
-        // Preload sounds immediately
-        preloadSounds();
-
         // Initialize sound system (unmute) after user interaction
-        initSound().then(() => {
-            this.soundInitialized = true;
-            console.log('Sound system ready');
-        });
+        this.setupAudio();
 
         this.setupGrid()   
         const lineDrawing = new LineDrawing()
@@ -204,6 +166,31 @@ export class GridManager {
             lineDrawing.pointerPosition = this.getPointerPosition(e)
             
         })
+    }
+
+    setupAudio() {
+        // Create one-time click handler for first interaction
+        const firstInteraction = async () => {
+            // Remove listeners after first interaction
+            document.removeEventListener('click', firstInteraction);
+            document.removeEventListener('touchstart', firstInteraction);
+            
+            // Preload sounds
+            sound.add('line1', '/1.wav');
+            sound.add('line2', '/2.wav');
+            sound.add('line3', '/3.wav');
+            sound.add('line4', '/4.wav');
+            sound.add('line5', '/5.wav');
+            sound.add('error', '/Error.wav');
+
+            // Unmute and initialize
+            sound.unmuteAll();
+            this.soundInitialized = true;
+            console.log('Sound system ready');
+        };
+
+        document.addEventListener('click', firstInteraction);
+        document.addEventListener('touchstart', firstInteraction);
     }
 
     update() {
